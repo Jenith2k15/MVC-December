@@ -22,21 +22,26 @@ namespace FamilyExpenseTracker.Controllers
         [HttpGet]
         public ActionResult AddFamilyMember()
         {
-            return View();
+            FamilyMember familyMember = new FamilyMember();
+            return View(familyMember);
         }
 
         // POST: Save family member to db
         [HttpPost]
         public ActionResult AddFamilyMember(FamilyMember familyMember)
         {
-            FamilyMemberModelManager familyMemberModelManager = new FamilyMemberModelManager();
-            bool isAdded = familyMemberModelManager.AddFamilyMember(familyMember);
-            if (isAdded)
+            if (ModelState.IsValid)
             {
-                //Redirect to GetFamilyMembers() action method
-                return RedirectToAction("GetFamilyMembers");
+                FamilyMemberModelManager familyMemberModelManager = new FamilyMemberModelManager();
+                bool isAdded = familyMemberModelManager.AddFamilyMember(familyMember);
+                if (isAdded)
+                {
+                    //Redirect to GetFamilyMembers() action method
+                    return RedirectToAction("GetFamilyMembers");
+                }
             }
-            return View();
+
+            return View(familyMember);
         }
 
         // GET: Form to edit family member
@@ -61,13 +66,17 @@ namespace FamilyExpenseTracker.Controllers
         [HttpPost]
         public ActionResult EditFamilyMember(FamilyMember familyMember)
         {
-            FamilyMemberModelManager familyMemberModelManager = new FamilyMemberModelManager();
-            bool isEdited = familyMemberModelManager.EditFamilyMember(familyMember);
-            if (isEdited)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("GetFamilyMembers");
+                FamilyMemberModelManager familyMemberModelManager = new FamilyMemberModelManager();
+                bool isEdited = familyMemberModelManager.EditFamilyMember(familyMember);
+                if (isEdited)
+                {
+                    return RedirectToAction("GetFamilyMembers");
+                }
             }
-            return View();
+            
+            return View(familyMember);
         }
 
         // GET: Form to delete family member

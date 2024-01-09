@@ -7,22 +7,36 @@
         <tr>
             <td></td>
             <td>@Html.HiddenFor(x => x.FamilyMemberId)</td>
+            <td>
+            </td>
         </tr>
         <tr>
             <td>Name</td>
             <td>@Html.TextBoxFor(x => x.Name)</td>
+            <td>
+                @Html.ValidationMessageFor(x => x.Name)
+            </td>
         </tr>
         <tr>
             <td>Cell</td>
             <td>@Html.TextBoxFor(x => x.Cell)</td>
+            <td>
+                @Html.ValidationMessageFor(x => x.Cell)
+            </td>
         </tr>
         <tr>
             <td>Work</td>
             <td>@Html.TextBoxFor(x => x.Work)</td>
+            <td>
+                @Html.ValidationMessageFor(x => x.Work)
+            </td>
         </tr>
         <tr>
             <td>Income</td>
             <td>@Html.TextBoxFor(x => x.Income)</td>
+            <td>
+                @Html.ValidationMessageFor(x => x.Income)
+            </td>
         </tr>
         <tr>
             <td></td>
