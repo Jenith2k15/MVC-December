@@ -1,0 +1,30 @@
+﻿@using FamilyExpenseTracker.Models;
+@model List<FamilyExpenseViewModel>
+
+
+@{
+    ViewBag.Title = "GetFamilyExpenses";
+}
+
+<h2>GetFamilyExpenses</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Purpose</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var familyExpense in Model)
+    {
+        <tr>
+            <td>@familyExpense.Id</td>
+            <td>@familyExpense.FamilyMemberName</td>
+            <td>@familyExpense.Purpose</td>
+            <td>@familyExpense.Amount</td>
+            <td>@familyExpense.Date</td>
+        </tr>
+    }
+</table>
+

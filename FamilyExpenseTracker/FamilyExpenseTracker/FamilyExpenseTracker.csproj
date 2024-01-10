@@ -120,12 +120,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\FamilyExpenseController.cs" />
     <Compile Include="Controllers\FamilyMemberController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FamilyExpense.cs" />
+    <Compile Include="Models\FamilyExpenseModelManager.cs" />
+    <Compile Include="Models\FamilyExpenseViewModel.cs" />
     <Compile Include="Models\FamilyMember.cs" />
     <Compile Include="Models\FamilyMemberModelManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,6 +189,7 @@
     <Content Include="Views\FamilyMember\EditFamilyMember.cshtml" />
     <Content Include="Views\FamilyMember\DeleteFamilyMember.cshtml" />
     <Content Include="Views\Shared\FamilyMemberPartial.cshtml" />
+    <Content Include="Views\FamilyExpense\GetFamilyExpenses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
